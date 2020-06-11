@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="icon" href="file.png">
+</head>
+<body>
+
+    <button class="btn" style="background: red; position: fixed; top: 15px; right: 15px; z-index: 3;" onclick="delSome()">Delete</button>
+    <br>
+    <br><center><h1>Homepage</h1></center>
+    
+
+    <div class="container" id="linkCon">
+        
+
+    </div>
+
+    <div class="container" style="min-height: 30vh; display: block;">
+        <h2>To-do</h2>
+        <div class="todos">
+            
+        <!--  -->
+        </div>
+        <br><br>
+        <button class="btn" style="background: linear-gradient(to right, #1f4037, #99f2c8)" onclick="addTodo()">Add Todo</button>
+        
+    </div>
+
+    <div class="add-box" id="addBox">
+        <button id="addClose" onclick="addClose()">X</button>
+        <center>
+                <input type="text" id="addName" placeholder="Name" autocomplete="off">
+                <input type="text" id="addLink" placeholder="Link" autocomplete="off">
+                <br>
+                <button id="addComp" class="btn" onclick="addComp()">Add</button>
+        </center>
+        
+    </div>
+
+    <div class="toast" id="toast">Toast</div>
+
+    <script src="index.js"></script>
+</body>
+</html>

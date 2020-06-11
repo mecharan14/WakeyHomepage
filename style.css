@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --bg: white;
+    --cl: black;
+    --br: rgba(0,0,0,.3);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root{
+        --bg: black;
+        --cl: white;
+        --br: rgba(255,255,255,.3);
+    }
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg);
+    color: var(--cl);
+}
+
+.container{
+    display: flex;
+    position: relative;
+    padding: 20px;
+    margin: 20px;
+    flex-wrap: wrap;
+    border-radius: 16px;
+    box-shadow: 0 0px 16px 0 var(--br);
+    margin-top: 10vh;
+}
+
+.btn{
+    padding: 16px 50px 16px 50px;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    outline: none;
+    background: grey;
+    /* box-shadow: 0 5px 5px 0 lightgrey; */
+    transition: all .2s ease;
+    /* border: 5px solid transparent; */
+    margin: 15px;
+    position: relative;
+    font-family: inherit;
+}
+
+.btn::after{
+    position: absolute;
+    content: "";
+    background: inherit;
+    width: 100%;
+    height: 100%;
+    transition: scale(.8);
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    filter: blur(15px);
+    opacity: .7;
+}
+
+
+.add-box{
+    position: fixed;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 5%;
+    box-shadow: 0 0px 20px 0 var(--br);
+    display: none;
+}
+/* 
+.add-box::after{
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(1,1,1,.5);
+    z-index: -1;
+} */
+
+input[type=text]{
+    padding: 1.5rem;
+    margin: 1rem;
+    outline: none;
+    width: 60%;
+    border: 1px solid black;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+#addClose{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    padding: 10px 16px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+}
+
+a{
+    position: relative;
+}
+
+a:visited{
+    color: blue;
+}
+
+.toast{
+    position: fixed;
+    background: rgba(0,0,0,.7);
+    transform: translate(-50%,-50%);
+    left: 50%;
+    color: white;
+    padding: 16px;
+    border-radius: 8px;
+    transition: all .2s ease;
+    opacity: 0;
+    bottom: -20%;
+}
+
+.todoItem{
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    background-color: #f2f3f4;
+    margin-top: 1rem;
+    border-radius: 8px;
+    border: 1px solid #c2c2c2;
+    position: relative;
+}
+
+.todoItem button{
+    background-color: red;
+    border: none;
+    color: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50px;
+    outline: none;
+    position: absolute;
+    right: .5rem;
+    top: .5rem;
+    cursor: pointer;
+}
