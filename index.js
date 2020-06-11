@@ -7,7 +7,7 @@ const init = () =>{
     // <a href="http://www.facebook.com" target="_blank"><button class="btn" style="background: linear-gradient(145deg, #4382ea, #29b4d3);">Facebook</button></a>
     // <a href="http://www.instagram.com" target="_blank"><button class="btn" style="background: linear-gradient(145deg, #4285f4, #ea4335);">Instagram</button></a>`;
     let html = ''
-    if(!localStorage.getItem('data')){
+    if(!localStorage.getItem('data') || JSON.parse(localStorage.getItem('data'))[0].name != "Google"){
         let obj = [
             {name: 'Google', link: 'http://www.google.com', color1: '#fc6c6b', color2: '#fbbc05'},
             {name: 'YouTube', link: 'http://www.youtube.com', color1: '#ec444c', color2: '#f26e73'},
