@@ -123,10 +123,10 @@ function getColors(obj, url0) {
 
             if(icons.length != 0){
                 let actual;
-                if(icons[0].indexOf('http://127.0.0.1:5500/') != -1){
+                if(icons[0].indexOf(window.location.origin) != -1){
                     var urlParts = url0.replace('http://','').replace('https://','').split(/[/?#]/);
                     var domain = urlParts[0]+'/';
-                    acutal = icons[0].replace('http://127.0.0.1:5500/', domain)
+                    acutal = icons[0].replace(window.location.origin, domain)
                 }else{
                     acutal = icons[0]
                 }
