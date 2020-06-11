@@ -130,11 +130,20 @@ function getColors(obj, url0) {
                 }else{
                     acutal = icons[0]
                 }
+
+                if(acutal.indexOf('web.whatsapp.com') != -1){
+                    obj.color1 = '#00e676'
+                    obj.color2 = '#E2E2E2'
+
+                    return revamp(obj)
+                }
+
                 getImageData(acutal)
                 .then(data => {
                     obj.color1 = rgbToHex(data[0])
                     obj.color2 = rgbToHex(data[1])
-                    revamp(obj)
+                    console.log(obj)
+                    // revamp(obj)
                 })
             }else{
                 console.log('Not found any favicon')
