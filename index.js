@@ -1,4 +1,4 @@
-const proxy = '';
+const proxy = 'https://cors-anywhere.herokuapp.com/';
 
 const init = () =>{
     let cont = document.querySelector("#linkCon");
