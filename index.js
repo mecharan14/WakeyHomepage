@@ -1,4 +1,5 @@
-const proxy = 'https://cors-anywhere.herokuapp.com/';
+// const proxy = 'https://cors-anywhere.herokuapp.com/';
+const proxy = ""
 
 const init = () =>{
     let cont = document.querySelector("#linkCon");
@@ -76,30 +77,30 @@ const addComp = () => {
     
 
     getColors(obj, link)
-        if(localStorage.getItem("data")){
-            let data = localStorage.getItem("data");
-            data = JSON.parse(data);
-            data.push(obj);
-            data = JSON.stringify(data);
-            localStorage.setItem("data", data);
-            
-        }else{
-            let arr = [];
-            arr.push(obj);
-            let data = JSON.stringify(arr);
-            localStorage.setItem("data", data);
-            
-        }
-
-        init();
-
+    if(localStorage.getItem("data")){
+        let data = localStorage.getItem("data");
+        data = JSON.parse(data);
+        data.push(obj);
+        data = JSON.stringify(data);
+        localStorage.setItem("data", data);
         
+    }else{
+        let arr = [];
+        arr.push(obj);
+        let data = JSON.stringify(arr);
+        localStorage.setItem("data", data);
+        
+    }
 
-        document.querySelector("#addName").value = "";
-        document.querySelector("#addLink").value = "";
-        addClose();
+    init();
 
-        toast("Added Successfully");
+    
+
+    document.querySelector("#addName").value = "";
+    document.querySelector("#addLink").value = "";
+    addClose();
+
+    toast("Added Successfully");
 
     
 }
@@ -138,12 +139,13 @@ function getColors(obj, url0) {
                     return revamp(obj)
                 }
 
+
                 getImageData(acutal)
                 .then(data => {
                     obj.color1 = rgbToHex(data[0])
                     obj.color2 = rgbToHex(data[1])
                     console.log(obj)
-                    // revamp(obj)
+                    revamp(obj)
                 })
             }else{
                 console.log('Not found any favicon')
