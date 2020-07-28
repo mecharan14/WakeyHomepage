@@ -81,6 +81,18 @@ body{
     display: none;
 }
 
+.updateBox{
+    position: fixed;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 5%;
+    box-shadow: 0 0px 20px 0 var(--br);
+    display: none;
+}
+
 input[type=text]{
     padding: 1.5rem;
     margin: 1rem;
@@ -91,7 +103,7 @@ input[type=text]{
     border-radius: 8px;
 }
 
-#addClose{
+#addClose, .updateBox button{
     position: absolute;
     top: 0;
     right: 0;

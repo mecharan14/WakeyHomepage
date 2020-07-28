@@ -1,12 +1,14 @@
 const proxy = 'https://cors-anywhere.herokuapp.com/';
-// const proxy = ""
+const update = {
+    version: "1.5.14",
+    new: [
+        "Colour buttons to any website (added from now onwards).",
+        "Dark mode issue fixed for todo item."
+    ]
+}
 
 const init = () =>{
     let cont = document.querySelector("#linkCon");
-    // let html = `<a href="http://www.google.com" target="_blank"><button class="btn" style="background: linear-gradient(145deg, #fc6c6b, #fbbc05);">Google</button></a>
-    // <a href="http://www.youtube.com" target="_blank"><button class="btn" style="background: linear-gradient(145deg, #ec444c, #f26e73);">YouTube</button></a>
-    // <a href="http://www.facebook.com" target="_blank"><button class="btn" style="background: linear-gradient(145deg, #4382ea, #29b4d3);">Facebook</button></a>
-    // <a href="http://www.instagram.com" target="_blank"><button class="btn" style="background: linear-gradient(145deg, #4285f4, #ea4335);">Instagram</button></a>`;
     let html = ''
     if(!localStorage.getItem('data') || JSON.parse(localStorage.getItem('data'))[0].name != "Google"){
         let obj = [
@@ -34,11 +36,38 @@ const init = () =>{
 
 init();
 
-const checkPass = () => {
-    const el = document.querySelector("#pass");
-    if(el.value == "8143"){
-        document.querySelector("#lock").style.display = "none";
+
+const checkUpdate = () => {
+    if(localStorage.getItem("updates")){
+        let data = JSON.parse(localStorage.getItem("updates"))
+        if(data.version != update.version){
+            let updateBox = document.querySelector("#updateBox");
+            let html = ""
+            update.new.forEach(item => {
+                html += `<p>${item}</p>`
+            })
+            updateBox.querySelector("#whatsnew").innerHTML = html
+            updateBox.style.display = "block";
+            localStorage.setItem("updates", JSON.stringify(update))
+        }
+    }else{
+        let updateBox = document.querySelector("#updateBox");
+        let html = ""
+        update.new.forEach(item => {
+            html += `<li>${item}</li>`
+        })
+        updateBox.querySelector("#whatsnew").innerHTML = `<ol>${html}</ol>`
+        updateBox.style.display = "block";
+        localStorage.setItem("updates", JSON.stringify(update))
     }
+    
+}
+
+checkUpdate()
+
+const closeUpdate = () => {
+    let updateBox = document.querySelector("#updateBox");
+    updateBox.style.display = "none"
 }
 
 const addNew = () =>{
