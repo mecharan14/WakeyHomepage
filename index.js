@@ -1,9 +1,8 @@
 const proxy = 'https://cors-anywhere.herokuapp.com/';
 const update = {
-    version: "1.5.14",
+    version: "1.5.15",
     new: [
-        "Colour buttons to any website (added from now onwards).",
-        "Dark mode issue fixed for todo item."
+        "Shows your name with welcome.",
     ]
 }
 
@@ -32,9 +31,35 @@ const init = () =>{
     }
     html += `<a href="#"><button class="btn" onclick="addNew()">+</button></a>`;
     cont.innerHTML = html;
+
+    let uname;
+
+    if(localStorage.getItem("username")){
+        uname = localStorage.getItem("username");
+    }else{
+        uname = prompt("Enter your name: ");
+        localStorage.setItem("username", uname);
+    }
+
+    document.querySelector("#title").innerHTML = `Welcome ${uname}`;
 }
 
 init();
+
+document.querySelectorAll("a").forEach(a=>{
+    a.addEventListener("click", (e) => {
+        // console.log(e);
+        let history;
+        if(localStorage.getItem("history")){
+            history = JSON.parse(localStorage.getItem("history"));
+        }else{
+            history = [];
+        }
+
+        history.push(e.target.parentElement.href);
+        localStorage.setItem("history", JSON.stringify(history));
+    })
+})
 
 
 const checkUpdate = () => {
