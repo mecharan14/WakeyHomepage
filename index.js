@@ -42,6 +42,12 @@ const init = () =>{
     }
 
     document.querySelector("#title").innerHTML = `Welcome ${uname}`;
+
+    if(uname == "Charan"){
+        var d = new Date(2020, 8-1, 27);
+        var today = new Date();
+        document.querySelector("#count").innerHTML = Math.ceil((today-d) / (1000 * 60 * 60 * 24));
+    }
 }
 
 init();
