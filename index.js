@@ -322,4 +322,25 @@ const getImageData = (url) => {
 
 // getImageData('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg')
 
+const getUsage = () => {
+    if(localStorage.getItem("history")){
+        let history = JSON.parse(localStorage.getItem("history"));
+        let count = new Map();
+        history.forEach(h => {
+            if(h != null && h != undefined){
+                if(count.has(h)){
+                    count.set(h, count.get(h)+1)
+                }else{
+                    count.set(h, 1)
+                }
+            }
+        })
+        console.log(`${count.size} items`);
+        let newCount = new Map([...count.entries()].sort((a,b) => b[1] - a[1]))
+        console.log(newCount);
+    }else{
+        console.log("No history");
+    }
+}
 
+getUsage();
