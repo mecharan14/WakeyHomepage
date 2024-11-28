@@ -1,4 +1,4 @@
-const proxy = 'https://cors-anywhere.herokuapp.com/';
+const proxy = ''; //'https://cors-anywhere.herokuapp.com/';
 const update = {
     version: "1.5.15",
     new: [
