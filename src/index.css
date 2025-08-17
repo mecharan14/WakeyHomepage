@@ -1,31 +1,31 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-:root{
+:root {
     --bg: white;
     --cl: black;
-    --br: rgba(0,0,0,.3);
+    --br: rgba(0, 0, 0, .3);
     --td: #f2f3f4;
 }
 
 @media (prefers-color-scheme: dark) {
-    :root{
+    :root {
         --bg: black;
         --cl: white;
-        --br: rgba(255,255,255,.3);
+        --br: rgba(255, 255, 255, .3);
         --td: #212F3D;
     }
 }
 
-body{
+body {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--bg);
     color: var(--cl);
 }
 
-.container{
+.container {
     display: flex;
     position: relative;
     padding: 20px;
@@ -36,7 +36,7 @@ body{
     margin-top: 10vh;
 }
 
-.btn{
+.btn {
     padding: 16px 50px 16px 50px;
     border-radius: 50px;
     border: none;
@@ -53,7 +53,7 @@ body{
     font-family: inherit;
 }
 
-.btn::after{
+.btn::after {
     position: absolute;
     content: "";
     background: inherit;
@@ -69,9 +69,9 @@ body{
 }
 
 
-.add-box{
+.add-box {
     position: fixed;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
     background: var(--bg);
@@ -81,9 +81,9 @@ body{
     display: none;
 }
 
-.updateBox{
+.updateBox {
     position: fixed;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
     background: var(--bg);
@@ -93,7 +93,7 @@ body{
     display: none;
 }
 
-input[type=text]{
+input[type=text] {
     padding: 1.5rem;
     margin: 1rem;
     outline: none;
@@ -103,7 +103,8 @@ input[type=text]{
     border-radius: 8px;
 }
 
-#addClose, .updateBox button{
+#addClose,
+.updateBox button {
     position: absolute;
     top: 0;
     right: 0;
@@ -116,18 +117,18 @@ input[type=text]{
     outline: none;
 }
 
-a{
+a {
     position: relative;
 }
 
-a:visited{
+a:visited {
     color: blue;
 }
 
-.toast{
+.toast {
     position: fixed;
-    background: rgba(0,0,0,.7);
-    transform: translate(-50%,-50%);
+    background: rgba(0, 0, 0, .7);
+    transform: translate(-50%, -50%);
     left: 50%;
     color: white;
     padding: 16px;
@@ -137,7 +138,7 @@ a:visited{
     bottom: -20%;
 }
 
-.todoItem{
+.todoItem {
     width: 100%;
     padding: 1rem;
     box-sizing: border-box;
@@ -148,7 +149,7 @@ a:visited{
     position: relative;
 }
 
-.todoItem button{
+.todoItem button {
     background-color: red;
     border: none;
     color: white;
@@ -160,4 +161,36 @@ a:visited{
     right: .5rem;
     top: .5rem;
     cursor: pointer;
+}
+
+#title,
+#count {
+    font-weight: 500;
+}
+
+.delete-link-icon,
+.edit-link-icon {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: grey;
+    border: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    background-color: transparent;
+    transition: all .2s ease;
+}
+
+.delete-link-icon:hover {
+    color: red;
+}
+
+
+.edit-link-icon:hover {
+    color: black;
 }
