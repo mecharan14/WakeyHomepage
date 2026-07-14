@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "colorthief": "^2.6.0",
+    "colorthief": "^2.7.0",
     "iconsax-reactjs": "^0.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
